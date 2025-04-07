@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,6 +135,9 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirige al login o a la página que
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_DIRS = [os.path.join(BASE_DIR, '/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
